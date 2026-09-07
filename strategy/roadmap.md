@@ -1,5 +1,5 @@
 # Roadmap
-Updated: 2026-09-06
+Updated: 2026-09-07
 This is a starting sequence, not a dated delivery commitment.
 
 ## Initial priorities
@@ -17,3 +17,8 @@ This is a starting sequence, not a dated delivery commitment.
 - Move substantial applications into dedicated repositories when needed.
 
 Track individual actions in GitHub Issues. Keep this page focused on priorities and milestones.
+
+## Weekly decision — 7 September 2026
+The automation-platform direction now combines a factory-facing Operations Shell with an Automation Runtime, Integration Gateway, and Execution Layer. Low vendor dependency and ease of learning are joint priorities; VDA 5050 is a priority interface.
+
+See the [architecture baseline](../docs/architecture/automation-runtime.md). The next planning step is to identify the separate implementation project and one representative factory workflow. MVP sequencing and technical choices in the note remain proposals, not delivery commitments. Existing priorities above remain in place.
