@@ -70,3 +70,73 @@ These are design requirements to resolve and test, not implemented security cont
 - [Automation advisory](../../projects/automation-advisory/README.md)
 - [Roadmap](../../strategy/roadmap.md)
 - [Ways and means](../../projects/ways-and-means/README.md)
+
+## Discussion archive — 15 September 2026
+Status: owner-authorized archive of design and planning discussion. The learnability goal is confirmed; detailed schemas, milestones, staffing, and effort remain proposals pending project definition.
+
+Source: AMR Weekly Brief, conversation 6a6bd8f5-0a70-83ee-b967-81af43d7280d; semantic-layer discussion 213367d8-eacb-4618-b8ff-5fc73be8b9bf, planning discussion 20b5c15e-e2ee-4ffe-b329-2baab17e8b9c, and archive request 64e76bc0-1c9f-495a-9459-7443a87c4f2b. Internal provenance only.
+
+### Semantic layer and learnability
+The owner emphasized reducing dependence on specialist-only configuration and making the system easy for factory personnel to learn. The proposed mechanism is a small, typed factory vocabulary above equipment-specific addresses and protocols.
+
+- Objects: Asset, Robot, Station, Buffer, Machine, Door, Conveyor, Load, Order, Mission, Alarm, Operator.
+- Example states: available, busy, waiting, blocked, fault, offline, manual, maintenance. These require separate state dimensions and precise definitions; they are not a finalized single enumeration.
+- Capabilities: move, pickup, dropoff, tow, lift, open, close, charge, scan, inspect, where actually supported.
+- Adapters translate equipment signals into meaningful properties and events, preserving source, timestamp, data quality, and mapping version.
+- Operations view shows factory objects, workflows, and alarms. Engineering view exposes addresses, topics, mappings, raw data, timing, and diagnostics.
+- Capability discovery is a candidate feature. Missing or ambiguous device metadata requires explicit engineering configuration rather than guessed meanings.
+
+Illustrative mapping: a documented PLC completion signal becomes Station03.processState = COMPLETE. The mapping requires equipment-specific verification; no sample address should be used as a real control instruction.
+
+### Workflow model
+Proposed user-facing constructs: Event, Condition, Action, Exception.
+
+Example: when machining completes, check destination capacity, request transport, confirm pickup, deliver, and confirm arrival. Explicitly define waiting, timeout, failure, cancellation, and recovery behavior.
+
+Translate configuration into an inspectable deterministic workflow before activation. Natural-language assistance is a future possibility, not an MVP requirement or permission to issue physical commands. An urgent priority must not override destination capacity, interlocks, or safety conditions.
+
+The proposed learning target of one or two days is an untested aspiration. Define representative users and tasks and measure usability before making a product claim.
+
+### Integration and control strategy
+Retain the four-layer architecture above. Evaluate VDA 5050 for mobile-robot mappings, OPC UA information models for equipment semantics, and ISA-95 terminology for manufacturing concepts. These are research directions, not conformance claims; editions, licenses, supplier capabilities, and actual mappings need verification.
+
+Existing PLCs, remote I/O, and field networks remain behind appropriate adapters or gateways. Direct support for CC-Link or any other field protocol is not established by this discussion.
+
+Keep machine-level control and safety functions with the systems assigned those responsibilities. The Leiomano runtime coordinates process workflows within an explicitly defined authority boundary. Observation, configuration, and command permissions remain separate.
+
+### Proposed milestones before WBS
+| Milestone | Intended result | Proposed evidence for progression |
+| --- | --- | --- |
+| M0 — Product definition | Scope, personas, terminology, canonical model, responsibility boundaries | One selected use case with agreed acceptance criteria |
+| M1 — Integration core | One AMR/FMS interface plus one PLC interface or simulator | Signals mapped into shared state with provenance and freshness |
+| M2 — Workflow runtime | Completion-to-transport-to-arrival workflow | Successful path and at least one defined failure/recovery path |
+| M3 — Operations shell | Asset/mission overview, alarms, simple workflow configuration, engineering view | Representative user can complete and diagnose the selected workflow |
+| M4 — Brownfield pilot | Integration with selected real factory components | Site-specific acceptance, authority, recovery, and deployment checks |
+| M5 — Productization | Packaging, upgrades, backup, SDK, documentation, automated tests, support readiness | Repeatable deployment and support process |
+
+The progression evidence is an editorial proposal to make the discussion actionable. Security, permissions, logging, and testing start in the earlier milestones as needed; M5 hardens them rather than introducing them for the first time. Real-equipment command authority and site readiness are prerequisites to a physical pilot.
+
+After milestone scope is agreed, create a WBS with deliverables, owners, dependencies, estimated person-days, acceptance evidence, and external resources. No WBS, deadline, or project budget is approved yet.
+
+### Preliminary manpower and effort
+Planning assumption: start with the founder leading product definition and factory requirements. A possible first technical addition is a backend/platform engineer; frontend/UX and controls/integration support can be added for the selected use case, potentially through contractors.
+
+The discussion proposed a core team of four roles: product/systems architecture, backend/platform, frontend/UX, and controls/integration. Specialist security, deployment, and QA coverage should be assigned when the scope requires it; role coverage does not imply a full-time hire for each role.
+
+| Stage | Discussion staffing range |
+| --- | --- |
+| Architecture/specification | 1 person |
+| Technical proof of concept | 1–2 people |
+| MVP | 3–5 people |
+| Customer pilot | 5–8 people |
+| Commercial platform | 8–15 people |
+| Multi-site platform | 15–30+ people |
+
+A leaner scenario discussed about four core people for a constrained pilot and six to eight for first commercial deployments. These scenarios assume different scope and support demands and are not interchangeable staffing commitments.
+
+Indicative effort quoted in the discussion: PoC 4–8 person-months; factory-pilot MVP 15–30 person-months; commercially supportable product 50–100+ person-months. These are unvalidated assistant estimates, not measured benchmarks or supplier quotations. They are not necessarily additive, and person-months do not directly predict elapsed duration.
+
+Re-estimate from the WBS after confirming interface access, reuse, reliability targets, site constraints, availability of engineering support, and the founder's capacity.
+
+### Next planning decisions
+Select the first workflow and deployment boundary; define the minimum object schema and adapter contract; choose the implementation project; then agree milestone acceptance criteria and produce the WBS. The archive does not authorize recruitment, procurement, or real-equipment control.
