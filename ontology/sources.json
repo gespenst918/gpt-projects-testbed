@@ -1,0 +1,61 @@
+{
+  "version": "0.1.0",
+  "sources": [
+    {
+      "id": "isa95",
+      "title": "ISA-95 / IEC 62264 conceptual family",
+      "edition": "Edition not claimed; public overview only",
+      "url": "https://www.isa.org/standards-and-publications/isa-standards/isa-95-standard",
+      "limitations": "Conceptual alignment; verify licensed parts before normative use.",
+      "reviewed": "2026-09-21"
+    },
+    {
+      "id": "isa95-model",
+      "title": "OPC UA Common Object Model: ISA-95",
+      "edition": "OPC 10030 public model",
+      "url": "https://reference.opcfoundation.org/specs/OPC-10030/4",
+      "limitations": "Supporting public interpretation; not a substitute for ISA-95.",
+      "reviewed": "2026-09-21"
+    },
+    {
+      "id": "machinery",
+      "title": "OPC UA for Machinery Part 1",
+      "edition": "1.04.1",
+      "url": "https://reference.opcfoundation.org/specs/OPC-40001-1/full",
+      "limitations": "Identification sections 8–11; state 12; mode 13.",
+      "reviewed": "2026-09-21"
+    },
+    {
+      "id": "vda5050",
+      "title": "VDA 5050",
+      "edition": "3.0.0, March 2026",
+      "url": "https://www.vda.de/en/news/publications/publication/vda-5050",
+      "limitations": "Official PDF prevails over GitHub.",
+      "reviewed": "2026-09-21"
+    },
+    {
+      "id": "vda5050-model",
+      "title": "VDA 5050 reference model",
+      "edition": "3.0.0 tag",
+      "url": "https://github.com/VDA5050/VDA5050/blob/3.0.0/VDA5050_EN.md",
+      "limitations": "Sections 6–7; mappings are a subset, not an adapter implementation.",
+      "reviewed": "2026-09-21"
+    },
+    {
+      "id": "iso3691-4",
+      "title": "ISO 3691-4",
+      "edition": "2023, edition 2",
+      "url": "https://www.iso.org/standard/83545.html",
+      "limitations": "Public scope only reviewed. Licensed clauses and risk assessment required; DIS revision is not the adopted baseline.",
+      "reviewed": "2026-09-21"
+    },
+    {
+      "id": "leiomano",
+      "title": "Leiomano architecture",
+      "edition": "2026-09-15 archive",
+      "url": "../docs/architecture/automation-runtime.md",
+      "limitations": "Local design definitions, not standard requirements.",
+      "reviewed": "2026-09-21"
+    }
+  ]
+}
