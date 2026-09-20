@@ -1,0 +1,184 @@
+{
+  "version": "0.1.0",
+  "layer": "safety",
+  "terms": [
+    {
+      "id": "safety.driverless-truck-system",
+      "label": "Driverless truck system",
+      "definition": "Truck and its associated operational system.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "iso3691-4",
+        "leiomano"
+      ],
+      "related": [
+        "mobile.robot"
+      ],
+      "note": ""
+    },
+    {
+      "id": "safety.hazard",
+      "label": "Hazard",
+      "definition": "Potential source of harm.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "iso3691-4",
+        "leiomano"
+      ],
+      "related": [],
+      "note": ""
+    },
+    {
+      "id": "safety.hazardous-zone",
+      "label": "Hazardous zone",
+      "definition": "Space in which exposure to a hazard is possible.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "iso3691-4",
+        "leiomano"
+      ],
+      "related": [
+        "safety.hazard"
+      ],
+      "note": ""
+    },
+    {
+      "id": "safety.risk",
+      "label": "Risk",
+      "definition": "Assessment of possible harm and its likelihood.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "iso3691-4",
+        "leiomano"
+      ],
+      "related": [
+        "safety.hazard"
+      ],
+      "note": ""
+    },
+    {
+      "id": "safety.function",
+      "label": "Safety function",
+      "definition": "Function assigned a risk-reduction purpose.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "iso3691-4",
+        "leiomano"
+      ],
+      "related": [
+        "safety.risk"
+      ],
+      "note": ""
+    },
+    {
+      "id": "safety.protective-stop",
+      "label": "Protective stop",
+      "definition": "Stop associated with a protective function.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "iso3691-4",
+        "leiomano"
+      ],
+      "related": [
+        "safety.function"
+      ],
+      "note": ""
+    },
+    {
+      "id": "safety.emergency-stop",
+      "label": "Emergency stop",
+      "definition": "Emergency intervention stop concept.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "iso3691-4",
+        "leiomano"
+      ],
+      "related": [
+        "safety.function"
+      ],
+      "note": ""
+    },
+    {
+      "id": "safety.safe-state",
+      "label": "Safe state",
+      "definition": "Condition established as acceptable by the applicable risk assessment.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "iso3691-4",
+        "leiomano"
+      ],
+      "related": [
+        "safety.risk"
+      ],
+      "note": "Zero speed or no alarm alone does not establish this."
+    },
+    {
+      "id": "safety.reset",
+      "label": "Reset",
+      "definition": "Acknowledgment or rearming step under defined conditions.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "iso3691-4",
+        "leiomano"
+      ],
+      "related": [
+        "safety.function"
+      ],
+      "note": "Not permission to restart."
+    },
+    {
+      "id": "safety.restart",
+      "label": "Restart",
+      "definition": "Resumption of operation under separately established conditions.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "iso3691-4",
+        "leiomano"
+      ],
+      "related": [
+        "safety.reset"
+      ],
+      "note": ""
+    },
+    {
+      "id": "safety.validation",
+      "label": "Validation",
+      "definition": "Documented evidence that assigned safety requirements are satisfied.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "iso3691-4",
+        "leiomano"
+      ],
+      "related": [
+        "safety.function"
+      ],
+      "note": ""
+    },
+    {
+      "id": "safety.reported-status",
+      "label": "Reported safety status",
+      "definition": "Non-safety telemetry describing a source safety condition.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "iso3691-4",
+        "leiomano"
+      ],
+      "related": [
+        "runtime.observation"
+      ],
+      "note": "Never treated as execution of a safety function."
+    }
+  ]
+}
