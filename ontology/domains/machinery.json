@@ -1,0 +1,76 @@
+{
+  "version": "0.1.0",
+  "layer": "domain",
+  "terms": [
+    {
+      "id": "machinery.machine",
+      "label": "Machine",
+      "definition": "Physical machine represented by an asset.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "machinery"
+      ],
+      "related": [
+        "runtime.asset"
+      ],
+      "note": ""
+    },
+    {
+      "id": "machinery.component",
+      "label": "Component",
+      "definition": "Identifiable part of a machine.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "machinery"
+      ],
+      "related": [
+        "machinery.machine"
+      ],
+      "note": ""
+    },
+    {
+      "id": "machinery.identification",
+      "label": "Identification",
+      "definition": "Nameplate and persistent identity information.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "machinery"
+      ],
+      "related": [
+        "machinery.machine"
+      ],
+      "note": ""
+    },
+    {
+      "id": "machinery.item-state",
+      "label": "Machinery item state",
+      "definition": "Activity and functional-availability dimension.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "machinery"
+      ],
+      "related": [
+        "runtime.state"
+      ],
+      "note": "NotAvailable, OutOfService, Executing, NotExecuting. Lost communication is unknown quality, not NotAvailable."
+    },
+    {
+      "id": "machinery.operation-mode",
+      "label": "Machinery operation mode",
+      "definition": "Intended activity category.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "machinery"
+      ],
+      "related": [
+        "runtime.state"
+      ],
+      "note": "None, Maintenance, Setup, Processing. Separate from manual/automatic control."
+    }
+  ]
+}

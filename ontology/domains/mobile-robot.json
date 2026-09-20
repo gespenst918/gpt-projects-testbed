@@ -1,0 +1,202 @@
+{
+  "version": "0.1.0",
+  "layer": "domain",
+  "terms": [
+    {
+      "id": "mobile.robot",
+      "label": "Mobile robot",
+      "definition": "Driverless material-transport resource.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "vda5050-model"
+      ],
+      "related": [
+        "runtime.asset"
+      ],
+      "note": ""
+    },
+    {
+      "id": "mobile.mission",
+      "label": "Mission",
+      "definition": "Leiomano transport task; may span protocol orders.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "vda5050-model"
+      ],
+      "related": [
+        "runtime.task"
+      ],
+      "note": ""
+    },
+    {
+      "id": "mobile.order",
+      "label": "Order",
+      "definition": "Versioned robot execution instruction.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "vda5050-model"
+      ],
+      "related": [
+        "mobile.mission"
+      ],
+      "note": ""
+    },
+    {
+      "id": "mobile.node",
+      "label": "Node",
+      "definition": "Route point.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "vda5050-model"
+      ],
+      "related": [
+        "runtime.location"
+      ],
+      "note": ""
+    },
+    {
+      "id": "mobile.edge",
+      "label": "Edge",
+      "definition": "Directed route connection.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "vda5050-model"
+      ],
+      "related": [
+        "mobile.node"
+      ],
+      "note": ""
+    },
+    {
+      "id": "mobile.action",
+      "label": "Robot action",
+      "definition": "Operation attached to execution or requested immediately.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "vda5050-model"
+      ],
+      "related": [
+        "runtime.action"
+      ],
+      "note": ""
+    },
+    {
+      "id": "mobile.blocking-type",
+      "label": "Blocking type",
+      "definition": "Action concurrency restriction.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "vda5050-model"
+      ],
+      "related": [
+        "mobile.action"
+      ],
+      "note": ""
+    },
+    {
+      "id": "mobile.factsheet",
+      "label": "Factsheet",
+      "definition": "Declared robot characteristics and support.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "vda5050-model"
+      ],
+      "related": [
+        "runtime.capability"
+      ],
+      "note": ""
+    },
+    {
+      "id": "mobile.zone",
+      "label": "Zone",
+      "definition": "Map region with operational constraints.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "vda5050-model"
+      ],
+      "related": [
+        "runtime.location"
+      ],
+      "note": "Not automatically a safety-rated zone."
+    },
+    {
+      "id": "mobile.zone-set",
+      "label": "Zone set",
+      "definition": "Identified collection of zones.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "vda5050-model"
+      ],
+      "related": [
+        "mobile.zone"
+      ],
+      "note": ""
+    },
+    {
+      "id": "mobile.planned-path",
+      "label": "Planned path",
+      "definition": "Reported intended trajectory.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "vda5050-model"
+      ],
+      "related": [
+        "mobile.robot"
+      ],
+      "note": "Not a reservation or safety guarantee."
+    },
+    {
+      "id": "mobile.operating-mode",
+      "label": "Operating mode",
+      "definition": "Robot control-mode dimension.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "vda5050-model"
+      ],
+      "related": [
+        "runtime.state"
+      ],
+      "note": ""
+    },
+    {
+      "id": "mobile.connection",
+      "label": "Connection",
+      "definition": "Protocol connectivity observation.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "vda5050-model"
+      ],
+      "related": [
+        "runtime.observation"
+      ],
+      "note": ""
+    },
+    {
+      "id": "mobile.load",
+      "label": "Load",
+      "definition": "Carried handling unit.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "vda5050-model"
+      ],
+      "related": [
+        "factory.material"
+      ],
+      "note": "Load identity and material-lot identity need explicit association."
+    }
+  ]
+}
