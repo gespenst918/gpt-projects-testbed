@@ -1,0 +1,29 @@
+{
+  "version": "0.1.0",
+  "status": "draft",
+  "sources": [
+    "machinery"
+  ],
+  "namespace_uri": "http://opcfoundation.org/UA/Machinery/",
+  "path_notation": "Symbolic BrowseNames, not deployable NodeIds; resolve namespace URI and server model at integration time.",
+  "entries": [
+    {
+      "source": "Identification.ProductInstanceUri",
+      "target": "machinery.identification",
+      "strategy": "preserve",
+      "transform": "Keep globally scoped identity; do not use display name as key."
+    },
+    {
+      "source": "MachineryItemState.CurrentState",
+      "target": "machinery.item-state",
+      "strategy": "preserve",
+      "transform": "Use state identity; bad StatusCode becomes unknown observation quality."
+    },
+    {
+      "source": "MachineryOperationMode.CurrentState",
+      "target": "machinery.operation-mode",
+      "strategy": "preserve",
+      "transform": "Retain activity mode independently from item state."
+    }
+  ]
+}

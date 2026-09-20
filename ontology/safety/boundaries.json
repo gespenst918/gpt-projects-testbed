@@ -1,0 +1,27 @@
+{
+  "version": "0.1.0",
+  "status": "draft",
+  "normative": false,
+  "rules": [
+    "Ontology and gateway do not implement or certify safety functions.",
+    "A process command, safety observation and safety-control action have distinct types and authorities.",
+    "Unknown or stale safety observations never mean safe.",
+    "Reset and restart are distinct; no inferred automatic restart.",
+    "Route release and zone permission are operational coordination, not safety clearance."
+  ],
+  "review_required": [
+    "Licensed ISO 3691-4 clauses and site applicability",
+    "Hazard analysis, protective measures and verification evidence",
+    "Responsible safety engineer and execution owner",
+    "Applicable regional legislation and later standard revisions"
+  ],
+  "excluded": [
+    "Performance-level assignment",
+    "Stopping-distance calculation",
+    "Certification or compliance verdicts"
+  ],
+  "sources": [
+    "iso3691-4",
+    "leiomano"
+  ]
+}
