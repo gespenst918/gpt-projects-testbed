@@ -1,0 +1,140 @@
+{
+  "version": "0.1.0",
+  "layer": "universal",
+  "terms": [
+    {
+      "id": "runtime.asset",
+      "label": "Asset",
+      "definition": "Runtime identity for an integrated resource.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "leiomano"
+      ],
+      "related": [
+        "factory.physical-asset"
+      ],
+      "note": "Not every runtime asset is physical; e.g. an FMS service."
+    },
+    {
+      "id": "runtime.capability",
+      "label": "Capability",
+      "definition": "Declared supported operation with parameters and constraints.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "leiomano"
+      ],
+      "related": [
+        "runtime.asset"
+      ],
+      "note": "Support does not confer command authority."
+    },
+    {
+      "id": "runtime.task",
+      "label": "Task",
+      "definition": "Requested operational outcome with owner and lifecycle.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "leiomano"
+      ],
+      "related": [],
+      "note": ""
+    },
+    {
+      "id": "runtime.action",
+      "label": "Action",
+      "definition": "Bounded requested operation contributing to a task.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "leiomano"
+      ],
+      "related": [
+        "runtime.task"
+      ],
+      "note": ""
+    },
+    {
+      "id": "runtime.event",
+      "label": "Event",
+      "definition": "Timestamped occurrence attributed to a source.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "leiomano"
+      ],
+      "related": [],
+      "note": ""
+    },
+    {
+      "id": "runtime.observation",
+      "label": "Observation",
+      "definition": "Value plus time, source, quality and mapping provenance.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "leiomano"
+      ],
+      "related": [
+        "runtime.asset"
+      ],
+      "note": ""
+    },
+    {
+      "id": "runtime.alarm",
+      "label": "Alarm",
+      "definition": "Condition requiring attention with explicit severity and lifecycle.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "leiomano"
+      ],
+      "related": [
+        "runtime.event"
+      ],
+      "note": ""
+    },
+    {
+      "id": "runtime.location",
+      "label": "Location",
+      "definition": "Named place or coordinate frame; not an equipment role.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "leiomano"
+      ],
+      "related": [],
+      "note": ""
+    },
+    {
+      "id": "runtime.command-authority",
+      "label": "Command authority",
+      "definition": "Explicit assignment of the system allowed to request an operation.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "leiomano"
+      ],
+      "related": [
+        "runtime.capability"
+      ],
+      "note": ""
+    },
+    {
+      "id": "runtime.state",
+      "label": "State",
+      "definition": "Observed condition in a named dimension.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "leiomano"
+      ],
+      "related": [
+        "runtime.observation"
+      ],
+      "note": "Connectivity, execution, mode and safety remain separate."
+    }
+  ]
+}

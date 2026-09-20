@@ -1,0 +1,59 @@
+{
+  "version": "0.1.0",
+  "status": "draft",
+  "equipment_role_path": [
+    "factory.enterprise",
+    "factory.site",
+    "factory.area",
+    "factory.work-center",
+    "factory.work-unit"
+  ],
+  "rules": [
+    "Containment is acyclic; identifiers are unique within a deployment.",
+    "Physical assets are assigned to roles; mobile location changes do not change organizational parentage.",
+    "Functional levels describe activities, not containment or network security zones."
+  ],
+  "functional_levels": [
+    {
+      "level": 0,
+      "meaning": "Physical process"
+    },
+    {
+      "level": 1,
+      "meaning": "Sensing and actuation"
+    },
+    {
+      "level": 2,
+      "meaning": "Monitoring and control"
+    },
+    {
+      "level": 3,
+      "meaning": "Manufacturing operations management"
+    },
+    {
+      "level": 4,
+      "meaning": "Business planning and logistics"
+    }
+  ],
+  "sources": [
+    "isa95",
+    "isa95-model"
+  ],
+  "relationships": [
+    {
+      "predicate": "assigned-to",
+      "from": "factory.physical-asset",
+      "to": "factory.equipment"
+    },
+    {
+      "predicate": "located-at",
+      "from": "runtime.asset",
+      "to": "runtime.location"
+    },
+    {
+      "predicate": "has-component",
+      "from": "machinery.machine",
+      "to": "machinery.component"
+    }
+  ]
+}

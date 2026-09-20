@@ -1,0 +1,197 @@
+{
+  "version": "0.1.0",
+  "layer": "universal",
+  "terms": [
+    {
+      "id": "factory.enterprise",
+      "label": "Enterprise",
+      "definition": "Business scope containing sites.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "isa95",
+        "isa95-model"
+      ],
+      "related": [],
+      "note": ""
+    },
+    {
+      "id": "factory.site",
+      "label": "Site",
+      "definition": "Operational location within an enterprise.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "isa95",
+        "isa95-model"
+      ],
+      "related": [
+        "factory.enterprise"
+      ],
+      "note": ""
+    },
+    {
+      "id": "factory.area",
+      "label": "Area",
+      "definition": "Grouping of work centers within a site.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "isa95",
+        "isa95-model"
+      ],
+      "related": [
+        "factory.site"
+      ],
+      "note": ""
+    },
+    {
+      "id": "factory.work-center",
+      "label": "Work center",
+      "definition": "Role-based grouping that performs manufacturing operations.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "isa95",
+        "isa95-model"
+      ],
+      "related": [
+        "factory.area"
+      ],
+      "note": ""
+    },
+    {
+      "id": "factory.work-unit",
+      "label": "Work unit",
+      "definition": "Role-based execution unit within a work center.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "isa95",
+        "isa95-model"
+      ],
+      "related": [
+        "factory.work-center"
+      ],
+      "note": "A role is not the physical asset assigned to it."
+    },
+    {
+      "id": "factory.equipment",
+      "label": "Equipment role",
+      "definition": "Logical resource role used in operations.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "isa95",
+        "isa95-model"
+      ],
+      "related": [
+        "factory.work-unit"
+      ],
+      "note": ""
+    },
+    {
+      "id": "factory.physical-asset",
+      "label": "Physical asset",
+      "definition": "Individually identifiable physical resource assigned to an equipment role.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "isa95",
+        "isa95-model"
+      ],
+      "related": [
+        "factory.equipment"
+      ],
+      "note": ""
+    },
+    {
+      "id": "factory.material",
+      "label": "Material",
+      "definition": "Substance or item consumed, produced, stored or transported.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "isa95",
+        "isa95-model"
+      ],
+      "related": [],
+      "note": ""
+    },
+    {
+      "id": "factory.material-lot",
+      "label": "Material lot",
+      "definition": "Identified grouping of material.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "isa95",
+        "isa95-model"
+      ],
+      "related": [
+        "factory.material"
+      ],
+      "note": ""
+    },
+    {
+      "id": "factory.personnel",
+      "label": "Personnel",
+      "definition": "People represented by operational qualifications and assignments.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "isa95",
+        "isa95-model"
+      ],
+      "related": [],
+      "note": ""
+    },
+    {
+      "id": "factory.process-segment",
+      "label": "Process segment",
+      "definition": "Reusable activity description with resource requirements.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "isa95",
+        "isa95-model"
+      ],
+      "related": [
+        "factory.equipment",
+        "factory.material",
+        "factory.personnel"
+      ],
+      "note": ""
+    },
+    {
+      "id": "factory.operations-schedule",
+      "label": "Operations schedule",
+      "definition": "Planned operations and requested timing.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "isa95",
+        "isa95-model"
+      ],
+      "related": [
+        "factory.process-segment"
+      ],
+      "note": ""
+    },
+    {
+      "id": "factory.operations-performance",
+      "label": "Operations performance",
+      "definition": "Reported actual execution and resource use.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "isa95",
+        "isa95-model"
+      ],
+      "related": [
+        "factory.operations-schedule"
+      ],
+      "note": ""
+    }
+  ]
+}
