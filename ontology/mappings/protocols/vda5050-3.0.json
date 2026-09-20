@@ -1,0 +1,66 @@
+{
+  "version": "0.1.0",
+  "protocol_version": "3.0.0",
+  "status": "draft",
+  "sources": [
+    "vda5050",
+    "vda5050-model"
+  ],
+  "direction": "observation-only",
+  "rules": [
+    "Validate against the exact protocol version before normalization.",
+    "Retain raw value, source identity and order update context.",
+    "No mission completion inferred solely from empty node/edge arrays.",
+    "No mechanical conversion of robot operating mode into MachineryOperationMode."
+  ],
+  "entries": [
+    {
+      "source": "order.orderId + order.orderUpdateId",
+      "target": "mobile.order",
+      "strategy": "adapter-only",
+      "transform": "Keep composite robot identity and update number; correlate separately with mission ID."
+    },
+    {
+      "source": "order.nodes",
+      "target": "mobile.node",
+      "strategy": "preserve",
+      "transform": "Retain order scope, sequence and release information."
+    },
+    {
+      "source": "order.edges",
+      "target": "mobile.edge",
+      "strategy": "preserve",
+      "transform": "Retain order scope and endpoints."
+    },
+    {
+      "source": "state.operatingMode",
+      "target": "mobile.operating-mode",
+      "strategy": "preserve",
+      "transform": "Preserve source enum; never collapse to machinery activity mode."
+    },
+    {
+      "source": "factsheet",
+      "target": "mobile.factsheet",
+      "strategy": "preserve",
+      "transform": "Declared support only."
+    },
+    {
+      "source": "zoneSet",
+      "target": "mobile.zone-set",
+      "strategy": "preserve",
+      "transform": "Preserve map and zone-set identities."
+    },
+    {
+      "source": "connection.connectionState",
+      "target": "mobile.connection",
+      "strategy": "preserve",
+      "transform": "Independent freshness policy; ONLINE is not operational readiness."
+    },
+    {
+      "source": "state.safetyState.activeEmergencyStop",
+      "target": "safety.reported-status",
+      "strategy": "generalize",
+      "transform": "Retain MANUAL/REMOTE/NONE verbatim in value; telemetry only, not a safe-state claim."
+    }
+  ]
+}
