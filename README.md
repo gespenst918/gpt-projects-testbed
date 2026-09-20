@@ -14,6 +14,10 @@ A home for Leiomano's service development, reusable knowledge, and practical exp
 - [Experiments](experiments/README.md): small prototypes.
 - [Archive](archive/README.md): retired material.
 
+## Automation platform semantics
+- [Tier 1 ontology](ontology/README.md): factory, machinery, mobile-robot and safety vocabulary with versioned mappings.
+- [Architecture baseline](docs/architecture/automation-runtime.md): Operations Shell, Automation Runtime and Integration Gateway.
+
 ## How to use this repository
 1. Open the relevant project README.
 2. Record the next concrete task in a GitHub Issue, linking to that project.
