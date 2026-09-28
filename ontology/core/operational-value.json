@@ -1,0 +1,168 @@
+{
+  "version": "0.1.0",
+  "layer": "universal",
+  "terms": [
+    {
+      "id": "factory.operational-objective",
+      "label": "Operational objective",
+      "definition": "Measurable intended improvement for a scoped factory activity with an owner, baseline, target and evaluation window.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "leiomano-operational-value"
+      ],
+      "related": [
+        "factory.process-segment",
+        "factory.operations-performance"
+      ],
+      "note": "Provides purpose for existing runtime tasks; does not replace their requested outcome or lifecycle."
+    },
+    {
+      "id": "factory.value-creating",
+      "label": "ValueCreating",
+      "definition": "Activity that directly transforms the product or service toward a customer requirement.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "leiomano-operational-value"
+      ],
+      "related": [
+        "factory.process-segment"
+      ],
+      "note": "Classify the activity in context, not the asset or its utilization."
+    },
+    {
+      "id": "factory.necessary-non-value-adding",
+      "label": "NecessaryNonValueAdding",
+      "definition": "Activity that does not directly add customer value but is currently required to sustain value creation under documented constraints.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "leiomano-operational-value"
+      ],
+      "related": [
+        "factory.process-segment"
+      ],
+      "note": "Necessity is conditional on the current layout, process and requirements; review when constraints change."
+    },
+    {
+      "id": "factory.avoidable-waste",
+      "label": "AvoidableWaste",
+      "definition": "Activity or portion of activity that can be removed without impairing required output, material readiness or applicable constraints.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "leiomano-operational-value"
+      ],
+      "related": [
+        "factory.process-segment"
+      ],
+      "note": "Separate avoidable distance, waiting and double handling from necessary transport."
+    },
+    {
+      "id": "factory.material-availability",
+      "label": "MaterialAvailability",
+      "definition": "Required material is usable at the required location, quantity and time.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "leiomano-operational-value"
+      ],
+      "related": [
+        "factory.operational-objective",
+        "factory.operations-performance"
+      ],
+      "note": "Measure readiness at point of use, not merely mission completion."
+    },
+    {
+      "id": "factory.flow-continuity",
+      "label": "FlowContinuity",
+      "definition": "Sustain planned production flow with fewer material-related interruptions.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "leiomano-operational-value"
+      ],
+      "related": [
+        "factory.operational-objective",
+        "factory.operations-performance"
+      ],
+      "note": "Distinguish material starvation from equipment faults and downstream blocking."
+    },
+    {
+      "id": "factory.labor-release",
+      "label": "LaborRelease",
+      "definition": "Reduce human time needed for an activity so capacity can be reassigned.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "leiomano-operational-value"
+      ],
+      "related": [
+        "factory.operational-objective",
+        "factory.operations-performance"
+      ],
+      "note": "Released hours are not automatically payroll savings; include residual handling, supervision and recovery."
+    },
+    {
+      "id": "factory.waiting-reduction",
+      "label": "WaitingReduction",
+      "definition": "Reduce time that material, equipment or personnel waits for required process inputs or transfers.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "leiomano-operational-value"
+      ],
+      "related": [
+        "factory.operational-objective",
+        "factory.operations-performance"
+      ],
+      "note": "Specify whose waiting, its cause and the observation window."
+    },
+    {
+      "id": "factory.excess-transport-reduction",
+      "label": "ExcessTransportReduction",
+      "definition": "Reduce movement beyond the feasible necessary transport for the required flow.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "leiomano-operational-value"
+      ],
+      "related": [
+        "factory.operational-objective",
+        "factory.operations-performance"
+      ],
+      "note": "Use comparable loads and output; include empty travel and double handling."
+    },
+    {
+      "id": "factory.wip-reduction",
+      "label": "WIPReduction",
+      "definition": "Reduce material committed to unfinished production while sustaining required service and output.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "leiomano-operational-value"
+      ],
+      "related": [
+        "factory.operational-objective",
+        "factory.operations-performance"
+      ],
+      "note": "Do not reduce buffers below the material-readiness requirement."
+    },
+    {
+      "id": "factory.ergonomic-risk-reduction",
+      "label": "ErgonomicRiskReduction",
+      "definition": "Reduce assessed exposure to manual handling strain in the selected work.",
+      "tier": 1,
+      "status": "draft",
+      "sources": [
+        "leiomano-operational-value"
+      ],
+      "related": [
+        "factory.operational-objective",
+        "factory.operations-performance"
+      ],
+      "note": "Requires site-specific assessment; this objective is neither a safety function nor evidence of compliance."
+    }
+  ]
+}

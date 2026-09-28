@@ -140,3 +140,22 @@ Re-estimate from the WBS after confirming interface access, reuse, reliability t
 
 ### Next planning decisions
 Select the first workflow and deployment boundary; define the minimum object schema and adapter contract; choose the implementation project; then agree milestone acceptance criteria and produce the WBS. The archive does not authorize recruitment, procurement, or real-equipment control.
+
+## Operational Value Model — 28 September 2026
+The Operational Value Model adds a purpose and assessment layer to factory semantics. It explains why a workflow is needed and how improvement will be evaluated. It retains the four-layer software baseline and existing task goals, rather than introducing another execution service.
+
+Purpose and evidence follow the existing concepts:
+`Operational objective → Process segment → Runtime task/action → Asset/capability`.
+Operations performance evaluates the objective using observations and events. These are semantic relationships, not equipment containment or new functional levels. The existing Enterprise → Site → Area → Work center → Work unit hierarchy scopes the assessment.
+
+| Existing responsibility | Operational Value Model use |
+| --- | --- |
+| Factory semantics | Classify process segments and relate operational objectives to performance |
+| Operations Shell | Show purpose, assessment rationale, targets and observed outcomes |
+| Automation Runtime | Execute authorized workflows and provide timestamped evidence; retain task lifecycle and command authority |
+| Integration Gateway | Preserve source, quality, units and mapping identity; do not infer business value from protocol status |
+| Execution Layer and safety owners | Retain motion, interlocks, safety functions and recovery responsibilities |
+
+Material handling generally does not add customer value directly; necessary transport supports material availability and value creation. The design policy is to eliminate unnecessary movement, minimize necessary movement, and automate the irreducible remainder where practical. Classification depends on the scoped activity and documented constraints, not whether a human or robot performs it. Cost or flow targets cannot override safety or permissions.
+
+Definitions live in [the core glossary extension](../../ontology/core/operational-value.json); relationships and the ordered policy extend [the existing hierarchy](../../ontology/core/hierarchy.json). The [business guide](../business/operational-value-model.md) connects technical evidence, operational outcomes and investment assumptions. This is a design extension, not implemented optimization or a claim of achieved savings.

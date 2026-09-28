@@ -23,6 +23,7 @@ def validate():
     terms = {}
     groups = {
         "core/factory.json": ("universal", "factory."),
+        "core/operational-value.json": ("universal", "factory."),
         "core/runtime.json": ("universal", "runtime."),
         "domains/machinery.json": ("domain", "machinery."),
         "domains/mobile-robot.json": ("domain", "mobile."),
@@ -58,6 +59,32 @@ def validate():
     require([v["level"] for v in hierarchy["functional_levels"]] == list(range(5)), "Functional levels")
     for relation in hierarchy["relationships"]:
         require(relation["from"] in terms and relation["to"] in terms, "Relationship endpoint")
+    model = hierarchy["operational_value_model"]
+    require(model["source"] in source_ids, "Operational Value Model source")
+    classes = set(model["classification_ids"])
+    objectives = set(model["objective_ids"])
+    require(len(classes) == 3 and len(objectives) == 7, "Classification/objective coverage")
+    require(classes.isdisjoint(objectives) and classes | objectives <= terms.keys(), "Operational Value Model references")
+    require(model["classification_subject"] == "factory.process-segment", "Classification subject")
+    steps = model["improvement_sequence"]
+    require([s["order"] for s in steps] == [1, 2, 3], "Improvement order")
+    require([s["action"] for s in steps] == ["eliminate", "minimize", "automate-where-practical"], "Improvement policy")
+    require([s["classification_id"] for s in steps] == ["factory.avoidable-waste", "factory.necessary-non-value-adding", "factory.necessary-non-value-adding"], "Automation preserves classification")
+    example = read("examples/operational-value.json")
+    require(example["example_only"] is True, "Assessment is synthetic")
+    assessment = example["assessment"]
+    require(set(model["assessment_fields"]) <= assessment.keys(), "Assessment fields")
+    require(assessment["classification_id"] in classes, "Assessment classification")
+    require(set(assessment["objective_ids"]) <= objectives, "Assessment objectives")
+    require(assessment["process_segment_type"] == "factory.process-segment" and assessment["equipment_role_type"] in hierarchy["equipment_role_path"], "Reuse factory hierarchy")
+    require(example["execution"]["process_segment_id"] == assessment["process_segment_id"], "Task realizes assessed segment")
+    require(example["execution"]["task_type"] == "runtime.task" and example["execution"]["command_authority"] == "none", "Assessment confers no authority")
+    for measurement in example["measurements"]:
+        require(set(model["measurement_fields"]) <= measurement.keys(), "Measurement fields")
+        require(measurement["objective_id"] in assessment["objective_ids"], "Measurement objective")
+        require(measurement["scope"] == assessment["process_segment_id"], "Measurement scope")
+        require(measurement["quality"] in {"good", "uncertain", "bad", "unknown"}, "Measurement quality")
+        require(measurement["actual"] is None and measurement["quality"] == "unknown", "Synthetic target is not actual performance")
     for path in (ROOT / "mappings/protocols").glob("*.json"):
         doc = json.loads(path.read_text())
         require(set(doc["sources"]) <= source_ids, "Mapping sources")
@@ -79,4 +106,4 @@ def validate():
     return len(terms)
 
 if __name__ == "__main__":
-    print(f"PASS: {validate()} terms; sources, hierarchy, mappings and example validated.")
+    print(f"PASS: {validate()} terms; sources, hierarchy, mappings and both examples validated.")

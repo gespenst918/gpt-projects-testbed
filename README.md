@@ -18,6 +18,8 @@ A home for Leiomano's service development, reusable knowledge, and practical exp
 - [Tier 1 ontology](ontology/README.md): factory, machinery, mobile-robot and safety vocabulary with versioned mappings.
 - [Architecture baseline](docs/architecture/automation-runtime.md): Operations Shell, Automation Runtime and Integration Gateway.
 
+- [Operational Value Model](docs/business/operational-value-model.md): connect factory activity, improvement objectives and AMR/AGV/AGF investment evidence.
+
 ## How to use this repository
 1. Open the relevant project README.
 2. Record the next concrete task in a GitHub Issue, linking to that project.
