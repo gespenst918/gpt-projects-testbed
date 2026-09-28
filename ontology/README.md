@@ -29,3 +29,12 @@ Run `python3 ontology/validate.py` from the repository root. This checks vocabul
 
 ## Extension policy
 Add domain details without importing protocol fields into universal definitions. Record exact source editions and mapping assumptions. Change meaning with a new ID or major version; add aliases without changing identity. Review safety terms with the responsible engineer before operational use. Next: select a pilot workflow, supplier interface and licensed standards corpus, then define executable asset/event schemas and adapter acceptance tests.
+
+## Operational Value Model
+The [Operational Value Model](core/operational-value.json) adds activity classifications and operational objectives in the existing `factory.` namespace. Its relationships, assessment fields and ordered improvement policy extend [the existing hierarchy](core/hierarchy.json). It creates no second equipment tree or software stack.
+
+Classify a scoped `factory.process-segment` as ValueCreating, NecessaryNonValueAdding or AvoidableWaste. Record the rationale and current constraints; split mixed activities and leave unassessed work unclassified. A runtime task realizes a process segment, and operations performance evaluates its objectives. The seven objective types specialize `factory.operational-objective`; existing task outcomes and lifecycles remain intact.
+
+Material handling generally adds no customer value directly, but some transport sustains value creation. Eliminate unnecessary movement, minimize necessary movement, then automate the irreducible remainder where practical. Automation alone never changes its classification to ValueCreating. JIT and Kanban coordinate readiness and replenishment; they do not themselves remove the need for physical transport.
+
+Use existing equipment roles to scope assessments, runtime observations/events as evidence, and operations performance for results. Preserve evidence quality, units and evaluation windows. Targets are not actuals. See the [synthetic assessment](examples/operational-value.json) and [management proposal guide](../docs/business/operational-value-model.md). Safety concepts and command authority remain independent of business objectives.

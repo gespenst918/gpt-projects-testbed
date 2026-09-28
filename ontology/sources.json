@@ -56,6 +56,14 @@
       "url": "../docs/architecture/automation-runtime.md",
       "limitations": "Local design definitions, not standard requirements.",
       "reviewed": "2026-09-21"
+    },
+    {
+      "id": "leiomano-operational-value",
+      "title": "Leiomano Operational Value Model",
+      "edition": "2026-09-28 design extension",
+      "url": "../docs/business/operational-value-model.md",
+      "limitations": "Owner-requested local design policy from AMR Weekly Brief; definitions and metrics are not normative standards or measured benefits.",
+      "reviewed": "2026-09-28"
     }
   ]
 }
