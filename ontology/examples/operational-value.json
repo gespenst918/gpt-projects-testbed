@@ -1,0 +1,65 @@
+{
+  "example_only": true,
+  "model": "Operational Value Model",
+  "assessment": {
+    "process_segment_id": "example.transport-wip-a-b",
+    "process_segment_type": "factory.process-segment",
+    "equipment_role_id": "example.work-unit-a",
+    "equipment_role_type": "factory.work-unit",
+    "classification_id": "factory.necessary-non-value-adding",
+    "objective_ids": [
+      "factory.material-availability",
+      "factory.labor-release"
+    ],
+    "owner": "Example production owner",
+    "rationale": "Separated machining and assembly require replenishment after avoidable detours are removed.",
+    "constraints": [
+      "Current separated layout",
+      "Required point-of-use buffer capacity"
+    ],
+    "review_date": "2026-10-28"
+  },
+  "execution": {
+    "task_id": "example.task-1",
+    "task_type": "runtime.task",
+    "process_segment_id": "example.transport-wip-a-b",
+    "current_method": "Manual tugger",
+    "candidate_method": "AMR",
+    "command_authority": "none"
+  },
+  "improvement_review": [
+    {
+      "order": 1,
+      "action": "eliminate",
+      "decision": "Remove duplicate buffer transfer"
+    },
+    {
+      "order": 2,
+      "action": "minimize",
+      "decision": "Use the shortest feasible replenishment route"
+    },
+    {
+      "order": 3,
+      "action": "automate-where-practical",
+      "decision": "Evaluate AMR for the residual transfer with handoff and exception labor included"
+    }
+  ],
+  "measurements": [
+    {
+      "objective_id": "factory.labor-release",
+      "metric": "Net human handling hours per comparable shift",
+      "unit": "h/shift",
+      "scope": "example.transport-wip-a-b",
+      "baseline": 4,
+      "target": 1,
+      "actual": null,
+      "evaluation_window": "Illustrative matched 8-hour shifts at equal output",
+      "evidence": [],
+      "quality": "unknown",
+      "assumptions": [
+        "Synthetic planning numbers, not measured savings",
+        "Target includes residual manual handling and recovery; 3 hours potentially released requires a redeployment plan"
+      ]
+    }
+  ]
+}
