@@ -54,6 +54,150 @@
       "predicate": "has-component",
       "from": "machinery.machine",
       "to": "machinery.component"
+    },
+    {
+      "predicate": "classified-as",
+      "from": "factory.process-segment",
+      "to": "factory.value-creating"
+    },
+    {
+      "predicate": "classified-as",
+      "from": "factory.process-segment",
+      "to": "factory.necessary-non-value-adding"
+    },
+    {
+      "predicate": "classified-as",
+      "from": "factory.process-segment",
+      "to": "factory.avoidable-waste"
+    },
+    {
+      "predicate": "pursues",
+      "from": "factory.process-segment",
+      "to": "factory.operational-objective"
+    },
+    {
+      "predicate": "realizes",
+      "from": "runtime.task",
+      "to": "factory.process-segment"
+    },
+    {
+      "predicate": "evaluates",
+      "from": "factory.operations-performance",
+      "to": "factory.operational-objective"
+    },
+    {
+      "predicate": "specializes",
+      "from": "factory.material-availability",
+      "to": "factory.operational-objective"
+    },
+    {
+      "predicate": "specializes",
+      "from": "factory.flow-continuity",
+      "to": "factory.operational-objective"
+    },
+    {
+      "predicate": "specializes",
+      "from": "factory.labor-release",
+      "to": "factory.operational-objective"
+    },
+    {
+      "predicate": "specializes",
+      "from": "factory.waiting-reduction",
+      "to": "factory.operational-objective"
+    },
+    {
+      "predicate": "specializes",
+      "from": "factory.excess-transport-reduction",
+      "to": "factory.operational-objective"
+    },
+    {
+      "predicate": "specializes",
+      "from": "factory.wip-reduction",
+      "to": "factory.operational-objective"
+    },
+    {
+      "predicate": "specializes",
+      "from": "factory.ergonomic-risk-reduction",
+      "to": "factory.operational-objective"
     }
-  ]
+  ],
+  "operational_value_model": {
+    "name": "Operational Value Model",
+    "status": "draft",
+    "source": "leiomano-operational-value",
+    "classification_subject": "factory.process-segment",
+    "classification_ids": [
+      "factory.value-creating",
+      "factory.necessary-non-value-adding",
+      "factory.avoidable-waste"
+    ],
+    "objective_ids": [
+      "factory.material-availability",
+      "factory.flow-continuity",
+      "factory.labor-release",
+      "factory.waiting-reduction",
+      "factory.excess-transport-reduction",
+      "factory.wip-reduction",
+      "factory.ergonomic-risk-reduction"
+    ],
+    "classification_rules": [
+      "Assign one classification per scoped activity assessment; split mixed activities into assessable portions.",
+      "Record scope, owner, rationale, constraints and review date; missing assessment means unclassified, not ValueCreating.",
+      "Material handling is generally non-value-adding; transport required to sustain value creation is NecessaryNonValueAdding under documented constraints.",
+      "Automation does not turn necessary transport into ValueCreating."
+    ],
+    "improvement_sequence": [
+      {
+        "order": 1,
+        "action": "eliminate",
+        "subject": "unnecessary movement",
+        "classification_id": "factory.avoidable-waste"
+      },
+      {
+        "order": 2,
+        "action": "minimize",
+        "subject": "necessary movement",
+        "classification_id": "factory.necessary-non-value-adding"
+      },
+      {
+        "order": 3,
+        "action": "automate-where-practical",
+        "subject": "irreducible necessary movement",
+        "classification_id": "factory.necessary-non-value-adding"
+      }
+    ],
+    "automation_conditions": [
+      "Feasible load, route, handoff and exception handling",
+      "Operational readiness and whole-life business case",
+      "Existing command authority, interlocks and safety responsibilities remain binding"
+    ],
+    "assessment_fields": [
+      "process_segment_id",
+      "equipment_role_id",
+      "classification_id",
+      "objective_ids",
+      "owner",
+      "rationale",
+      "constraints",
+      "review_date"
+    ],
+    "measurement_fields": [
+      "objective_id",
+      "metric",
+      "unit",
+      "scope",
+      "baseline",
+      "target",
+      "actual",
+      "evaluation_window",
+      "evidence",
+      "quality",
+      "assumptions"
+    ],
+    "rules": [
+      "Equipment role containment and functional levels remain unchanged.",
+      "Targets and estimates are distinct from observed performance; unknown actuals remain unknown.",
+      "Objectives do not confer command authority or establish safety protection."
+    ]
+  }
 }
