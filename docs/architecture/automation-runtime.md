@@ -140,3 +140,9 @@ Re-estimate from the WBS after confirming interface access, reuse, reliability t
 
 ### Next planning decisions
 Select the first workflow and deployment boundary; define the minimum object schema and adapter contract; choose the implementation project; then agree milestone acceptance criteria and produce the WBS. The archive does not authorize recruitment, procurement, or real-equipment control.
+
+## Proposed architecture validation milestone — 19 October 2026
+
+The [Minimum Test Laboratory plan](minimum-test-laboratory.md) proposes L1 virtual testing, an L2 hardware-in-the-loop bench, optional L2+ small ROS2 robot tests and L3 partner validation. It preserves the four-layer ownership above and defines five evidence gates, a machining-station replenishment scenario and its failure variants.
+
+Principal acceptance criterion: replace a virtual robot with a partner robot without changing the factory-facing workflow or material-readiness success meaning. Only endpoint configuration, capability bindings and explicit adapter/mapping changes are expected. This complements the existing M0–M4 sequence; no lab, implementation, gate completion, procurement or partnership is claimed. Operational Value Model references remain proposals in open PR #2, linked explicitly in the plan.

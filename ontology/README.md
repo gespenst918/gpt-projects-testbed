@@ -29,3 +29,7 @@ Run `python3 ontology/validate.py` from the repository root. This checks vocabul
 
 ## Extension policy
 Add domain details without importing protocol fields into universal definitions. Record exact source editions and mapping assumptions. Change meaning with a new ID or major version; add aliases without changing identity. Review safety terms with the responsible engineer before operational use. Next: select a pilot workflow, supplier interface and licensed standards corpus, then define executable asset/event schemas and adapter acceptance tests.
+
+## Proposed laboratory validation
+
+The [Minimum Test Laboratory plan](../docs/architecture/minimum-test-laboratory.md) applies this vocabulary through L1 virtual, L2 hardware-in-the-loop and L3 partner tests, with optional L2+ development-robot testing. Its G1 gate preserves provenance, freshness, unknown/unsupported distinctions and layer separation; subsequent gates test interfaces, workflows and recovery. All stages and gates are proposed, not implemented or passed. No canonical IDs, mappings or schemas are changed by the plan.
