@@ -16,6 +16,7 @@ A home for Leiomano's service development, reusable knowledge, and practical exp
 
 ## Automation platform semantics
 - [Tier 1 ontology](ontology/README.md): factory, machinery, mobile-robot and safety vocabulary with versioned mappings.
+- [Minimum Test Laboratory](docs/architecture/minimum-test-laboratory.md): proposed L1–L3 lab structure, test gates and virtual-to-partner-robot acceptance milestone.
 - [Architecture baseline](docs/architecture/automation-runtime.md): Operations Shell, Automation Runtime and Integration Gateway.
 
 ## How to use this repository
