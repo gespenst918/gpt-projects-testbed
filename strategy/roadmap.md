@@ -1,5 +1,6 @@
 # Roadmap
-Updated: 22026-11-16his is a starting sequence, not a dated delivery commitment.
+Updated: 2026-11-16
+This is a starting sequence, not a dated delivery commitment.
 
 ## Initial priorities
 1. Business development: draft a reusable company introduction and service outline.
